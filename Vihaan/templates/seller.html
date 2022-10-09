@@ -61,23 +61,24 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form method="post" action="/seller">
+                                {% csrf_token %}
                                     <div class="mb-3">
                                         <label for="Name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="seller_name">
+                                        <input type="text" class="form-control" id="seller_name" name="seller_name">
                                     </div>
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Phone No.</label>
-                                        <input type="text" class="form-control" id="seller_phone">
+                                        <input type="text" class="form-control" id="seller_phone" name="seller_phone">
                                     </div>
                                     <div class="mb-3">
                                         <label for="Rawmaterialname" class="form-label">Raw Material Name</label>
-                                        <input type="text" class="form-control" id="seller_raw">
+                                        <input type="text" class="form-control" id="seller_raw" name="seller_raw">
                                     </div>
                                     <div class="mb-3">
                                         <label for="priceperstd" class="form-label">Price Per Std.</label>
                                         <input type="text" class="form-control" id="seller_price"
-                                            placeholder="Your Expected Price Per std.">
+                                            placeholder="Your Expected Price Per std." name="seller_price">
                                     </div>
 
 
@@ -97,6 +98,16 @@
             </div>
         </div>
     </nav>
+    
+
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+{% endif %}
 
 </body>
 

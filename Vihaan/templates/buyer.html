@@ -45,6 +45,7 @@
                     <button class="btn btn-outline-success me-2" type="submit">Search</button>
 
                 </form>
+                
                 <!-- Button to trigger Sign In modal -->
                 <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#SignIn">
                     Sign In
@@ -99,22 +100,24 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form method="post" action="/buyer">
+                                {% csrf_token %}
+                                
                                     <div class="mb-3">
                                         <label for="Name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="buyer_name">
+                                        <input type="text" class="form-control" id="buyer_name" name="buyer_name">
                                     </div>
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Phone No.</label>
-                                        <input type="text" class="form-control" id="buyer_phone">
+                                        <input type="text" class="form-control" id="buyer_phone" name="buyer_phone">
                                     </div>
                                     <div class="mb-3">
                                         <label for="adhaarno" class="form-label">Adhaar No.</label>
-                                        <input type="text" class="form-control" id="buyer_adhaarno">
+                                        <input type="text" class="form-control" id="buyer_adhaarno" name="buyer_adhaar">
                                     </div>
                                     <div class="mb-3">
                                         <label for="pass1" class="form-label"> Create Password</label>
-                                        <input type="password" class="form-control" id="buyer_pass1"
+                                        <input type="password" class="form-control" id="buyer_pass1" name="buyer_pass1"
                                             >
                                     </div>
                                     <div class="mb-3">
@@ -141,6 +144,16 @@
             </div>
         </div>
     </nav>
+    
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+{% endif %}
+
 
 </body>
 
