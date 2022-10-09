@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buyer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Vihaan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="seller">Seller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="buyer">Buyer</a>
+                    </li>
+
+
+
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success me-2" type="submit">Search</button>
+
+                </form>
+                <!-- Button to trigger Sign In modal -->
+                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#SignIn">
+                    Sign In
+                </button>
+
+                <!--  Sign In Modal -->
+                <div class="modal fade" id="SignIn" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="title_Signin">Sign In</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="user_name" class="form-label">User Name</label>
+                                        <input type="text" class="form-control" id="user_name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="pass" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="pass">
+                                    </div>
+
+
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="seller_agree">
+                                        <label class="form-check-label" for="agree">Agree <a href="">terms and
+                                                conditions</a></label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Sign In</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button to trigger Sign Up modal -->
+                <button type="button" class="btn btn-outline-success mx-1" data-bs-toggle="modal" data-bs-target="#SignUp">
+                    Sign Up
+                </button>
+
+                <!--Sign Up Modal -->
+                <div class="modal fade" id="SignUp" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="title_signup">Sign Up</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="Name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="buyer_name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Phone No.</label>
+                                        <input type="text" class="form-control" id="buyer_phone">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="adhaarno" class="form-label">Adhaar No.</label>
+                                        <input type="text" class="form-control" id="buyer_adhaarno">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="pass1" class="form-label"> Create Password</label>
+                                        <input type="password" class="form-control" id="buyer_pass1"
+                                            >
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="pass2" class="form-label"> Confirm Password</label>
+                                        <input type="password" class="form-control" id="buyer_pass2"
+                                            >
+                                    </div>
+
+
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="seller_agree">
+                                        <label class="form-check-label" for="agree">Agree <a href="">terms and
+                                                conditions</a></label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+</html>
