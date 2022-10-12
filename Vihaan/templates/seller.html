@@ -41,8 +41,8 @@
 
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success me-2" type="submit">Search</button>
+                    <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success me-3" type="submit">Search</button>
 
                 </form>
                 <!-- Button trigger modal -->
@@ -62,7 +62,7 @@
                             </div>
                             <div class="modal-body">
                                 <form method="post" action="/seller">
-                                {% csrf_token %}
+                                    {% csrf_token %}
                                     <div class="mb-3">
                                         <label for="Name" class="form-label">Name</label>
                                         <input type="text" class="form-control" id="seller_name" name="seller_name">
@@ -84,8 +84,7 @@
 
                                     <div class="mb-3 form-check">
                                         <input type="checkbox" class="form-check-input" id="seller_agree">
-                                        <label class="form-check-label" for="agree">Agree <a href="">terms and
-                                                conditions</a></label>
+                                        <label class="form-check-label" for="agree">Agree <a  data-bs-toggle="modal" data-bs-target="#terms" class="link-primary">Terms And Conditions</a></label>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -98,17 +97,117 @@
             </div>
         </div>
     </nav>
-    
 
-{% if messages %}
-{% for message in messages %}
+
+    {% if messages %}
+    {% for message in messages %}
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         {{ message }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      {% endfor %}
-{% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
 
 </body>
+<!-- body -->
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="static/spice.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+                height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">Seller Of Raw Materials</h1>
+            <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most
+                popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
+                extensive prebuilt components, and powerful JavaScript plugins.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" data-bs-toggle="modal"
+                    data-bs-target="#terms">Terms And Conditions</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4" data-bs-toggle="modal"
+                    data-bs-target="#register">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="terms" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Terms And Conditions</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quasi reprehenderit quis veniam
+                explicabo culpa ex perspiciatis vel laborum. Itaque officia, laboriosam corporis deserunt fugit
+                doloremque! A, porro praesentium aut totam dignissimos quisquam veritatis commodi dolor mollitia harum,
+                sapiente dicta facilis similique quae expedita velit non laborum voluptates. Nesciunt animi placeat
+                molestias deserunt beatae, pariatur est reiciendis labore dolorum perspiciatis voluptatum, earum
+                architecto? Quaerat cupiditate at nemo porro sit nesciunt praesentium esse. Atque accusantium velit at.
+                Laboriosam, unde. At quo saepe veniam dolorem suscipit debitis dignissimos earum nam maxime unde ratione
+                fugit dolore esse, voluptates rem. Velit magni excepturi aperiam eum vero doloremque maiores, placeat
+                atque suscipit quaerat reiciendis omnis modi quisquam voluptas sint itaque vel ex, minima at hic vitae?
+                Perspiciatis odio corrupti reprehenderit voluptates, in veritatis asperiores rem eos exercitationem
+                sequi! Pariatur libero quia placeat, voluptas consequatur deleniti a ratione! Asperiores nihil ratione
+                odit cupiditate, architecto nam quisquam beatae eum culpa porro itaque dolorum vel officia, debitis
+                natus sunt ab eaque suscipit eos! Corporis officiis magni quidem ullam est quaerat repellat sed! Facere
+                dignissimos ullam voluptatum explicabo nemo? Voluptate veritatis, sunt natus velit alias magni aperiam
+                provident ex quo, sapiente ut earum nemo eligendi adipisci quae quod voluptatem!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#register">Agree</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="container-fluid py-5 bg-dark text-dark">
+    <div class="row">
+      <div class="col-12 col-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+        <small class="d-block mb-3 text-muted">&copy; 2017–2022</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Cool stuff</a></li>
+          <li><a class="link-secondary" href="#">Random feature</a></li>
+          <li><a class="link-secondary" href="#">Team feature</a></li>
+          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+          <li><a class="link-secondary" href="#">Another one</a></li>
+          <li><a class="link-secondary" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Resource name</a></li>
+          <li><a class="link-secondary" href="#">Resource</a></li>
+          <li><a class="link-secondary" href="#">Another resource</a></li>
+          <li><a class="link-secondary" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Business</a></li>
+          <li><a class="link-secondary" href="#">Education</a></li>
+          <li><a class="link-secondary" href="#">Government</a></li>
+          <li><a class="link-secondary" href="#">Gaming</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Team</a></li>
+          <li><a class="link-secondary" href="#">Locations</a></li>
+          <li><a class="link-secondary" href="#">Privacy</a></li>
+          <li><a class="link-secondary" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
 
 </html>

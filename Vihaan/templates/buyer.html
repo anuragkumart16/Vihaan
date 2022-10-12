@@ -40,12 +40,12 @@
 
 
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex px=5" role="search">
+                    <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success me-2" type="submit">Search</button>
 
                 </form>
-                
+
                 <!-- Button to trigger Sign In modal -->
                 <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#SignIn">
                     Sign In
@@ -85,7 +85,8 @@
                     </div>
                 </div>
                 <!-- Button to trigger Sign Up modal -->
-                <button type="button" class="btn btn-outline-success mx-1" data-bs-toggle="modal" data-bs-target="#SignUp">
+                <button type="button" class="btn btn-outline-success mx-1" data-bs-toggle="modal"
+                    data-bs-target="#SignUp">
                     Sign Up
                 </button>
 
@@ -101,8 +102,8 @@
                             </div>
                             <div class="modal-body">
                                 <form method="post" action="/buyer">
-                                {% csrf_token %}
-                                
+                                    {% csrf_token %}
+
                                     <div class="mb-3">
                                         <label for="Name" class="form-label">Name</label>
                                         <input type="text" class="form-control" id="buyer_name" name="buyer_name">
@@ -117,13 +118,11 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="pass1" class="form-label"> Create Password</label>
-                                        <input type="password" class="form-control" id="buyer_pass1" name="buyer_pass1"
-                                            >
+                                        <input type="password" class="form-control" id="buyer_pass1" name="buyer_pass1">
                                     </div>
                                     <div class="mb-3">
                                         <label for="pass2" class="form-label"> Confirm Password</label>
-                                        <input type="password" class="form-control" id="buyer_pass2"
-                                            >
+                                        <input type="password" class="form-control" id="buyer_pass2">
                                     </div>
 
 
@@ -144,18 +143,155 @@
             </div>
         </div>
     </nav>
-    
-{% if messages %}
-{% for message in messages %}
+
+    {% if messages %}
+    {% for message in messages %}
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         {{ message }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      {% endfor %}
-{% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
 
 
-<!-- body -->
+    <!-- body -->
+
+
+    <main>
+        <div class="container py-4">
+            <header class="pb-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+
+                    <h2>Vihaan</h2>
+                </a>
+            </header>
+
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Buyer Of Raw Materials</h1>
+                    <p class="col-md-8 fs-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem laborum quod
+                        tempore sapiente reiciendis repellendus debitis, aliquid culpa blanditiis praesentium in enim
+                        veniam placeat sed recusandae velit iusto, est omnis. Quod autem eligendi eos laboriosam!</p>
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="modal"
+                        data-bs-target="#terms">Terms And Conditions</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="terms" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Terms And Conditions</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatum
+                                enim excepturi in exercitationem veniam eaque? Blanditiis atque sit nesciunt autem
+                                doloremque unde modi voluptatem, earum fuga
+                                architecto dolore reiciendis quae omnis illum culpa itaque, iste minus dolorum? Quae
+                                omnis culpa ex!
+                                Impedit, placeat distinctio incidunt hic iusto alias culpa praesentium fuga facilis
+                                numquam voluptates cupiditate eius possimus ea eligendi
+                                ipsam ad! Dicta, sed. In, ipsum veritatis quo quia deleniti, accusamus saepe placeat
+                                totam rerum vitae aliquid doloremque repellat hic adipisci. Sequi alias
+                                minima autem tempora? Dolores, numquam. Voluptatibus, dolores. Cupiditate dolores
+                                consequatur quaerat magni sequi sunt modi mollitia nemo officiis, doloribus, nihil
+                                repellendus lauda
+                                ntium. Soluta minima ipsa quam esse harum aliquid omnis. Veniam assumenda quaerat
+                                quisquam maxime, excepturi commodi, nulla numquam iusto recusandae distinctio ducimus?
+                                Fugit mollitia fuga labore accusantium repellat quia eveniet illum
+                                , vel in neque iure esse corporis? Dolorem
+                                unde explicabo laborum distinctio animi assumenda, amet hic dignissimos aperiam! Neque
+                                eligendi consectetur id, architecto voluptatum inventore ab illo debitis eveniet eos
+                                doloremque et perspiciatis magni est quisquam? Magni alias et nam modi i
+                                n, quisquam vel reiciendis cumque fuga ipsum quas iste numquam deleniti nisi atque
+                                maiores doloribus? Culpa iste necessitatibus, eius porro recusandae architecto sit ut
+                                soluta!
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agree</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                    <div class="h-100 p-5 text-bg-dark rounded-3">
+                        <h2>Sign UP</h2>
+                        <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron
+                            look. Then, mix and match with additional component themes and more.</p>
+                        <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#SignUp" type="button">Sign Up</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2>Sign In</h2>
+                        <p>Or, keep it light and add a border for some added definition to the boundaries of your
+                            content. Be sure to look under the hood at the source HTML here as we've adjusted the
+                            alignment and sizing of both column's content for equal-height.</p>
+                        <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#SignIn" type="button">Sign In</button>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <!-- footer -->
+    <footer class="container-fluid  bg-dark text-dark ">
+        <div class="row">
+            <div class="col-12 col-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+                    viewBox="0 0 24 24">
+                    <title>Product</title>
+                    <circle cx="12" cy="12" r="10" />
+                    <path
+                        d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+                </svg>
+                <small class="d-block mb-3 text-muted">&copy; 2017–2022</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="#">Cool stuff</a></li>
+                    <li><a class="link-secondary" href="#">Random feature</a></li>
+                    <li><a class="link-secondary" href="#">Team feature</a></li>
+                    <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+                    <li><a class="link-secondary" href="#">Another one</a></li>
+                    <li><a class="link-secondary" href="#">Last time</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="#">Resource name</a></li>
+                    <li><a class="link-secondary" href="#">Resource</a></li>
+                    <li><a class="link-secondary" href="#">Another resource</a></li>
+                    <li><a class="link-secondary" href="#">Final resource</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="#">Business</a></li>
+                    <li><a class="link-secondary" href="#">Education</a></li>
+                    <li><a class="link-secondary" href="#">Government</a></li>
+                    <li><a class="link-secondary" href="#">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="#">Team</a></li>
+                    <li><a class="link-secondary" href="#">Locations</a></li>
+                    <li><a class="link-secondary" href="#">Privacy</a></li>
+                    <li><a class="link-secondary" href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
 
 </body>
 
