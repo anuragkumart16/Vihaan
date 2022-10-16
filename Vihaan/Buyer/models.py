@@ -7,6 +7,10 @@ class Buyer_table(models.Model):
     buyer_adhaar=models.CharField(max_length=50)
     buyer_pass1=models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.buyer_name
+    
+
 
 
     

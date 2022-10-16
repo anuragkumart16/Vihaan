@@ -30,10 +30,10 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="seller">Seller</a>
+                        <a class="nav-link" href="/seller">Seller</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="buyer">Buyer</a>
+                        <a class="nav-link" href="/buyer">Buyer</a>
                     </li>
 
 
@@ -62,14 +62,15 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form method="post" action="signin">
+                                {% csrf_token %}
                                     <div class="mb-3">
                                         <label for="user_name" class="form-label">User Name</label>
-                                        <input type="text" class="form-control" id="user_name">
+                                        <input type="text" class="form-control" id="user_name" name="user_name">
                                     </div>
                                     <div class="mb-3">
                                         <label for="pass" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="pass">
+                                        <input type="password" class="form-control" id="pass" name="password">
                                     </div>
 
 
@@ -101,7 +102,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form method="post" action="/buyer">
+                                <form method="post" action="signup">
                                     {% csrf_token %}
 
                                     <div class="mb-3">
@@ -137,6 +138,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="/admin" class="btn btn-outline-success">Admin</a>
 
 
 
