@@ -61,7 +61,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form method="post" action="/seller">
+                                <form method="post" action="">
                                     {% csrf_token %}
                                     <div class="mb-3">
                                         <label for="Name" class="form-label">Name</label>
@@ -92,6 +92,10 @@
                         </div>
                     </div>
                 </div>
+
+                <a href="/admin" class="btn btn-outline-success mx-3">Admin</a>
+
+
 
 
             </div>
