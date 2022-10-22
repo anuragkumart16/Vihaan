@@ -15,7 +15,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 
-
+<!-- navigation bar -->
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Vihaan</a>
@@ -26,12 +26,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- home button -navbar -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
+                    <!-- seller button -navbar -->
                     <li class="nav-item">
                         <a class="nav-link" href="/seller">Seller</a>
                     </li>
+                    <!-- buyer button -navbar -->
                     <li class="nav-item">
                         <a class="nav-link" href="/buyer">Buyer</a>
                     </li>
@@ -76,8 +79,8 @@
 
                                     <div class="mb-3 form-check">
                                         <input type="checkbox" class="form-check-input" id="seller_agree">
-                                        <label class="form-check-label" for="agree">Agree <a href="">terms and
-                                                conditions</a></label>
+                                        <label class="form-check-label" for="agree">Agree </label>
+                                        <button type="button" class="btn btn-link" data-bs-dismiss="modal" data-bs-target="#terms" data-bs-toggle="modal">Terms And Conditions</button>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Sign In</button>
                                 </form>
@@ -129,8 +132,10 @@
 
                                     <div class="mb-3 form-check">
                                         <input type="checkbox" class="form-check-input" id="seller_agree">
-                                        <label class="form-check-label" for="agree">Agree <a href="">terms and
-                                                conditions</a></label>
+                                        <label class="form-check-label" for="agree">Agree 
+                                            <button type="button" class=" btn btn-link" data-bs-dismiss="modal" data-bs-target="#terms" data-bs-toggle="modal">Terms And Conditions
+                                            </button>
+                                        </label>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -146,6 +151,7 @@
         </div>
     </nav>
 
+<!-- loop for alerts -->
     {% if messages %}
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
@@ -155,10 +161,7 @@
     {% endfor %}
     {% endif %}
 
-
-    <!-- body -->
-
-
+    <!-- main -->
     <main>
         <div class="container py-4">
             <header class="pb-3 mb-4 border-bottom">
@@ -167,6 +170,7 @@
                     <h2>Vihaan</h2>
                 </a>
             </header>
+            <!-- buyers of raw materials -->
 
             <div class="p-5 mb-4 bg-light rounded-3">
                 <div class="container-fluid py-5">
@@ -174,18 +178,23 @@
                     <p class="col-md-8 fs-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem laborum quod
                         tempore sapiente reiciendis repellendus debitis, aliquid culpa blanditiis praesentium in enim
                         veniam placeat sed recusandae velit iusto, est omnis. Quod autem eligendi eos laboriosam!</p>
+                    <!-- button to trigger terms modal -->
                     <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="modal"
                         data-bs-target="#terms">Terms And Conditions</button>
                 </div>
-                <!-- Modal -->
+                
+                <!-- for button of terms modal check above div -->
+                <!-- Modal for terms and conditions -->
                 <div class="modal fade" id="terms" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
+                            <!-- header of modal -->
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Terms And Conditions</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
+                            <!-- terms and conditions text -->
                             <div class="modal-body">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptatum
                                 enim excepturi in exercitationem veniam eaque? Blanditiis atque sit nesciunt autem
@@ -210,16 +219,18 @@
                                 maiores doloribus? Culpa iste necessitatibus, eius porro recusandae architecto sit ut
                                 soluta!
                             </div>
+                            <!-- modal buttons -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agree</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-target="#SignIn" data-bs-toggle="modal">Agree</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+<!-- div for sign up and sign in modal and text -->
             <div class="row align-items-md-stretch">
+                <!-- sign up button to trigger signup modal -->
                 <div class="col-md-6">
                     <div class="h-100 p-5 text-bg-dark rounded-3">
                         <h2>Sign UP</h2>
@@ -228,6 +239,7 @@
                         <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#SignUp" type="button">Sign Up</button>
                     </div>
                 </div>
+                <!-- sign in button to trigger signin modal-->
                 <div class="col-md-6">
                     <div class="h-100 p-5 bg-light border rounded-3">
                         <h2>Sign In</h2>
@@ -239,6 +251,7 @@
                 </div>
             </div>
     </main>
+
     <!-- footer -->
     <footer class="container-fluid  bg-dark text-dark ">
         <div class="row">

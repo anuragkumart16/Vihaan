@@ -7,4 +7,5 @@ urlpatterns = [
     path('signin',views.signin),
     path('signup',views.signup),
     path('logout',views.logout),
+    path('landbuyer',views.land)
 ]

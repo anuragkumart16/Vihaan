@@ -1,4 +1,4 @@
-from django.shortcuts import render,Http404
+from django.shortcuts import render,Http404,redirect
 from Buyer.models import Buyer_table
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -14,7 +14,7 @@ def signin(request):
 
         if user is not None :
             login(request, user)
-            raise Http404('still being developed')
+            return render(request, 'landbuyer.html')
         else:
             messages.error(request, 'Inavalid Credentials ,Please Try Again')
             return render(request, 'Buyer.html')
@@ -41,4 +41,10 @@ def signup(request):
 
 def logout(request):
     return render(request,'buyer.html')
+
+def land(request):
+    if request.method=='POST':
+        return render(request, 'landbuyer.html')
+    else:
+        raise Http404('Unaurthorised Access')
     
