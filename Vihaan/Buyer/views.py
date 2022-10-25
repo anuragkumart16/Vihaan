@@ -43,8 +43,8 @@ def logout(request):
     return render(request,'buyer.html')
 
 def land(request):
-    if request.method=='POST':
+   # if request.method=='POST':
         return render(request, 'landbuyer.html')
-    else:
-        raise Http404('Unaurthorised Access')
+    #else:
+     #   raise Http404('Unaurthorised Access')
     
