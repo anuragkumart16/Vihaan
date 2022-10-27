@@ -61,7 +61,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form method="post" action="">
+                                <form method="post" action="" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <div class="mb-3">
                                         <label for="Name" class="form-label">Name</label>
@@ -80,11 +80,23 @@
                                         <input type="text" class="form-control" id="seller_price"
                                             placeholder="Your Expected Price Per std." name="seller_price">
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="textarea" class="form-label">Description</label>
+                                        <textarea class="form-control" name="desc" id="desc" cols="30" rows="10"
+                                            placeholder="Enter your text here"></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Enter Image</label>
+                                        <input class="form-control" type="file" id="formFile" name="img">
+                                    </div>
 
 
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="seller_agree">
-                                        <label class="form-check-label" for="agree">Agree <a  data-bs-toggle="modal" data-bs-target="#terms" class="link-primary">Terms And Conditions</a></label>
+                                        <input type="checkbox" class="form-check-input" id="seller_agree" checked>
+                                        <label class="form-check-label" for="agree">Agree <a data-bs-toggle="modal"
+                                                data-bs-target="#terms" class="link-primary">Terms And
+                                                Conditions</a></label>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -117,7 +129,7 @@
 <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
-            <img src="static/spice.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+            <img src="/static/spice.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
                 height="500" loading="lazy">
         </div>
         <div class="col-lg-6">
@@ -160,57 +172,65 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#register">Agree</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal"
+                    data-bs-target="#register">Agree</button>
             </div>
         </div>
     </div>
 </div>
 <footer class="container-fluid py-5 bg-dark text-dark">
     <div class="row">
-      <div class="col-12 col-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-        <small class="d-block mb-3 text-muted">&copy; 2017–2022</small>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Cool stuff</a></li>
-          <li><a class="link-secondary" href="#">Random feature</a></li>
-          <li><a class="link-secondary" href="#">Team feature</a></li>
-          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-          <li><a class="link-secondary" href="#">Another one</a></li>
-          <li><a class="link-secondary" href="#">Last time</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Resource name</a></li>
-          <li><a class="link-secondary" href="#">Resource</a></li>
-          <li><a class="link-secondary" href="#">Another resource</a></li>
-          <li><a class="link-secondary" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Business</a></li>
-          <li><a class="link-secondary" href="#">Education</a></li>
-          <li><a class="link-secondary" href="#">Government</a></li>
-          <li><a class="link-secondary" href="#">Gaming</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Team</a></li>
-          <li><a class="link-secondary" href="#">Locations</a></li>
-          <li><a class="link-secondary" href="#">Privacy</a></li>
-          <li><a class="link-secondary" href="#">Terms</a></li>
-        </ul>
-      </div>
+        <div class="col-12 col-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+                viewBox="0 0 24 24">
+                <title>Product</title>
+                <circle cx="12" cy="12" r="10" />
+                <path
+                    d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+            </svg>
+            <small class="d-block mb-3 text-muted">&copy; 2017–2022</small>
+        </div>
+        <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="link-secondary" href="#">Cool stuff</a></li>
+                <li><a class="link-secondary" href="#">Random feature</a></li>
+                <li><a class="link-secondary" href="#">Team feature</a></li>
+                <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+                <li><a class="link-secondary" href="#">Another one</a></li>
+                <li><a class="link-secondary" href="#">Last time</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="link-secondary" href="#">Resource name</a></li>
+                <li><a class="link-secondary" href="#">Resource</a></li>
+                <li><a class="link-secondary" href="#">Another resource</a></li>
+                <li><a class="link-secondary" href="#">Final resource</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="link-secondary" href="#">Business</a></li>
+                <li><a class="link-secondary" href="#">Education</a></li>
+                <li><a class="link-secondary" href="#">Government</a></li>
+                <li><a class="link-secondary" href="#">Gaming</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="link-secondary" href="#">Team</a></li>
+                <li><a class="link-secondary" href="#">Locations</a></li>
+                <li><a class="link-secondary" href="#">Privacy</a></li>
+                <li><a class="link-secondary" href="#">Terms</a></li>
+            </ul>
+        </div>
     </div>
-  </footer>
+</footer>
 
 
 
