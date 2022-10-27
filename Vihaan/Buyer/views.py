@@ -3,6 +3,8 @@ from Buyer.models import Buyer_table
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from Seller.models import Seller_table
+
 
 def index(request):
     return render(request,"buyer.html")
@@ -47,4 +49,6 @@ def land(request):
         return render(request, 'landbuyer.html')
     #else:
      #   raise Http404('Unaurthorised Access')
-    
+def data(request):
+    prodcut_name=
+
