@@ -12,3 +12,4 @@ class Seller_table(models.Model):
     def __str__(self):
         return self.seller_raw
     
+# testing

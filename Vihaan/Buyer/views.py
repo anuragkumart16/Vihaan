@@ -50,5 +50,6 @@ def land(request):
     #else:
      #   raise Http404('Unaurthorised Access')
 def data(request):
-    prodcut_name=
+    # prodcut_name=
+    pass
 
