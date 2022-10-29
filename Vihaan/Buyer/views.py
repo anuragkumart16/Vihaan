@@ -49,7 +49,6 @@ def land(request):
         return render(request, 'landbuyer.html')
     #else:
      #   raise Http404('Unaurthorised Access')
-def data(request):
-    # prodcut_name=
-    pass
-
+def product_data(request):
+    product_list = Seller_table.objects.all()
+    return render(request, 'landbuyer.html', { 'Products': product_list} )
